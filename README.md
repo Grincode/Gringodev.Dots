@@ -1,12 +1,17 @@
-Este repositorio contiene la configuración personalizada de Neovim y un script para automatizar la instalación de dependencias y la configuración inicial.
-Requisitos
+# Gringodev.Dots
 
-    Sistema operativo: macOS (probado en versiones recientes).
+Este repositorio contiene la configuración personalizada de **Neovim** y un script para automatizar la instalación de dependencias y la configuración inicial.
 
-    Gestor de paquetes: Homebrew.
+---
 
-Estructura del repositorio
-Copy
+## Requisitos
+
+- **Sistema operativo**: macOS (probado en versiones recientes).
+- **Gestor de paquetes**: [Homebrew](https://brew.sh/).
+
+---
+
+## Estructura del repositorio
 
 Gringodev.Dots/
 ├── nvim/ # Configuración de Neovim
@@ -16,90 +21,67 @@ Gringodev.Dots/
 │ │ ├── plugins/ # Configuración de plugins
 │ │ └── config/ # Configuraciones adicionales
 │ └── after/ # Configuraciones adicionales (opcional)
-└── setup.sh # Script de instalación
+├── setup.sh # Script de instalación
+└── README.md # Documentación del repositorio
 
-Script de instalación (setup.sh)
+---
 
-El script setup.sh automatiza la instalación de dependencias y la configuración de Neovim.
-¿Qué hace el script?
+## Script de instalación (`setup.sh`)
 
-    Instala dependencias:
+El script `setup.sh` automatiza la instalación de dependencias y la configuración de Neovim.
 
-        Neovim
+### ¿Qué hace el script?
 
-        Node.js
+1. **Instala dependencias**:
 
-        npm
+   - Neovim
+   - Node.js
+   - npm
+   - Git
+   - GCC
+   - FZF
+   - fd
+   - ripgrep
+   - coreutils
+   - bat
+   - curl
+   - lazygit
 
-        Git
+2. **Crea el directorio de configuración**:
 
-        GCC
+   - Crea la carpeta `~/.config/nvim` si no existe.
 
-        FZF
+3. **Clona este repositorio**:
 
-        fd
+   - Clona el repositorio **Gringodev.Dots** en una carpeta temporal.
 
-        ripgrep
+4. **Copia la configuración**:
 
-        coreutils
+   - Copia los archivos de configuración de Neovim a `~/.config/nvim`.
 
-        bat
+5. **Limpia archivos temporales**:
+   - Elimina la carpeta temporal donde se clonó el repositorio.
 
-        curl
+---
 
-        lazygit
+### ¿Cómo usar el script?
 
-    Crea el directorio de configuración:
+1. **Descarga el script**:
 
-        Crea la carpeta ~/.config/nvim si no existe.
+   ```bash
+   curl -o setup.sh https://raw.githubusercontent.com/Grincode/Gringodev.Dots/main/setup.sh
 
-    Clona este repositorio:
+   ```
 
-        Clona el repositorio Gringodev.Dots en una carpeta temporal.
+2. Haz el script ejecutable:
+   ´´´bash
+   chmod +x setup.sh
+   ´´´
 
-    Copia la configuración:
-
-        Copia los archivos de configuración de Neovim a ~/.config/nvim.
-
-    Limpia archivos temporales:
-
-        Elimina la carpeta temporal donde se clonó el repositorio.
-
-¿Cómo usar el script?
-
-    Descarga el script:
-    bash
-    Copy
-
-    curl -o setup.sh https://raw.githubusercontent.com/Grincode/Gringodev.Dots/main/setup.sh
-
-    Haz el script ejecutable:
-    bash
-    Copy
-
-    chmod +x setup.sh
-
-    Ejecuta el script:
-    bash
-    Copy
-
-    ./setup.sh
-
-Ejemplo de uso
-bash
-Copy
-
-# Descargar el script
-
-curl -o setup.sh https://raw.githubusercontent.com/Grincode/Gringodev.Dots/main/setup.sh
-
-# Hacer el script ejecutable
-
-chmod +x setup.sh
-
-# Ejecutar el script
-
-./setup.sh
+3. Ejecuta el script:
+   ´´´bash
+   ./setup.sh
+   ´´´
 
 Configuración de Neovim
 
@@ -126,19 +108,3 @@ La configuración de Neovim incluye:
         <leader>w: Guardar archivo.
 
         <leader>q: Salir de Neovim.
-
-Contribuciones
-
-Si encuentras algún problema o tienes sugerencias para mejorar la configuración, ¡no dudes en abrir un issue o enviar un pull request!
-Licencia
-
-Este proyecto está bajo la licencia MIT.
-
-¡Esperamos que esta configuración te sea útil! Si tienes alguna pregunta, no dudes en contactarnos. 😊
-Notas adicionales
-
-    Asegúrate de tener Git instalado antes de ejecutar el script.
-
-    Si prefieres usar Fish Shell, asegúrate de ajustar los comandos según sea necesario.
-
-¡Gracias por usar Gringodev.Dots! 🚀
