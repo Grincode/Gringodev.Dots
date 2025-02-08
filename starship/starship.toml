@@ -1,0 +1,159 @@
+format = """
+[░▒▓█](#a3aed2)\
+$os\
+[](bg:#8a6df1 fg:#a3aed2)\
+$directory\
+[](fg:#8a6df1 bg:#394260)\
+$git_branch\
+$git_status\
+
+[](fg:#394260 bg:#212736)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$bun\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:#212736 bg:#1d2230)\
+$time\
+[](fg:#1d2230)\
+
+\n$character"""
+
+palette = 'tokyo-night'
+
+[palettes.tokyo-night]
+color_fg0 = '#090c0c'
+color_blue = '#a3aed2'
+
+[os]
+disabled = false
+style = "bg:color_blue fg:color_fg0"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚 "
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:color_blue fg:color_fg0"
+style_root = "bg:color_blue fg:color_fg0"
+format = '[ $user ]($style)'
+
+[directory]
+style = "fg:#e3e5e5 bg:#8a6df1"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = "🌱"
+style = "bold green"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+
+[git_status]
+conflicted = "🏳"       # Conflictos de fusión
+ahead = "🏎💨"          # Adelantado al remoto
+behind = "😰"           # Detrás del remoto
+diverged = "😵"         # Divergencias entre local y remoto
+untracked = "🤷"        # Archivos no rastreados
+stashed = "📦"          # Cambios en el stash
+modified = "📝"         # Archivos modificados
+staged = "🎯"           # Archivos en el staging area
+renamed = "👅"          # Archivos renombrados
+deleted = "🗑"          # Archivos eliminados
+added = "🆕"            # Archivos nuevos
+copied = "📋"           # Archivos copiados
+unmerged = "🚧"         # Archivos no fusionados
+ignored = "🙈"          # Archivos ignorados
+up_to_date = "✅"       # Repositorio actualizado
+no_upstream = "🌊"      # Sin upstream configurado
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[c]
+symbol = " "
+style = "bg:#212736"
+format = '[[ $symbol( $version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[java]
+symbol = " "
+style = "bg:#212736"
+format = '[[ $symbol( $version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol( $version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol( $version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol( $version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:color_bg3"
+format = '[[ $symbol( $context) ](fg:#769ff0 bg:#212736)]($style)'
+
+[conda]
+style = "bg:color_bg3"
+format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
